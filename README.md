@@ -1,4 +1,4 @@
-# Save & Serve – Connecting Surplus food to the needy
+# Save & Serve – A Smarter Approach to Tackling Food Waste and Hunger
 
 ## Overview  
 Save & Serve is a platform designed to minimize food waste by efficiently connecting food providers with those in need. It enables **real-time food listings**, where surplus food is listed and matched with nearby NGOs and volunteers using **AI-powered smart matching**. The notifications ensure timely pickups and efficient food distribution.  
@@ -21,4 +21,9 @@ Save & Serve aligns with the **United Nations Sustainable Development Goals (SDG
 - 🌍 **SDG #2 – Zero Hunger:** Ensures surplus food reaches those in need.  
 - 🌿 **SDG #12 – Responsible Consumption & Production:** Reduces food waste and promotes sustainability.  
 
-By efficiently redistributing excess food, **Save & Serve** helps combat food insecurity while reducing waste, making a tangible impact on society. 
+By efficiently redistributing excess food, **Save & Serve** helps combat food insecurity while reducing waste, making a tangible impact on society.
+
+---
+
+### 📜 License  
+This project is open-source and available under the [MIT License](LICENSE).
