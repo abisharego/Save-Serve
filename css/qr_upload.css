@@ -1,0 +1,14 @@
+.qr-container, .upload-container {
+    width: 50%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-container input {
+    width: 90%;
+    margin: 10px 0;
+}
