@@ -12,13 +12,15 @@ body {
     color: #333;
     text-align: center;
     padding: 50px;
+    background-image: url('images/5.jpg');
+    background-size: cover;
 }
 
 /* Centered Content Box */
 .container {
     background: white;
     padding: 40px;
-    width: 50%;
+    width: 30%;
     margin: auto;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);

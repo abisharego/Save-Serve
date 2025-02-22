@@ -12,7 +12,6 @@
     </style>
 </head>
 <body>
-
     <h2>Restaurant Registration</h2>
     <form action="register_restaurant_process.php" method="POST">
     <label for="restaurant_name">Restaurant Name:</label>
@@ -35,7 +34,5 @@
 
     <button type="submit">Register</button>
 </form>
-
-
 </body>
 </html>
