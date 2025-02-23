@@ -23,6 +23,34 @@ Save & Serve aligns with the **United Nations Sustainable Development Goals (SDG
 
 By efficiently redistributing excess food, **Save & Serve** helps combat food insecurity while reducing waste, making a tangible impact on society.
 
+## 🚀 Installation Guide  
+
+### 1️⃣ Start Apache & MySQL  
+- Open **XAMPP Control Panel**  
+- Start **Apache** and **MySQL**  
+
+### 2️⃣ Download & Extract the Project  
+- Download the zip file
+- Extract the zip file folder into: C:\xampp\htdocs\save&serve
+
+### 3️⃣ Import the Database
+- Open phpMyAdmin (http://localhost/phpmyadmin/)
+- Create a database: save&serve
+- Import `save&serve.sql` from the project folder
+
+### 4️⃣ Configure Database Connection  
+- Open `db.php` and update the database credentials if needed:  
+
+```php
+$host = "localhost";
+$user = "root";
+$pass = "";
+$dbname = "save&serve";
+```
+
+### 5️⃣ Run the Application
+- Open a browser and visit: http://localhost/save&serve
+
 ---
 
 ### 📜 License  
