@@ -8,6 +8,12 @@
     <style>
         h2{
             padding:10px;
+            color: white;
+            text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+            text-style: italic;
+        }
+        body{
+            background-image:url("images/7.jpg");
         }
     </style>
 </head>

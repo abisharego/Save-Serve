@@ -50,3 +50,14 @@ CREATE TABLE food_distributions (
     FOREIGN KEY (ngo_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (volunteer_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+CREATE TABLE survey_responses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    role ENUM('Donor', 'NGO', 'Volunteer') NOT NULL,
+    donation_frequency ENUM('Daily', 'Weekly', 'Monthly') NOT NULL,
+    challenges TEXT,
+    preferred_pickup_time TIME,
+    contact VARCHAR(255) NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

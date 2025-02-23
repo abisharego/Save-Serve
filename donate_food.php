@@ -14,6 +14,7 @@ body {
     padding: 50px;
     background-image: url('images/5.jpg');
     background-size: cover;
+    
 }
 
 /* Centered Content Box */

@@ -325,6 +325,36 @@ tr:hover {
         </table>
     </div>
 </div>
+<h3>Scan QR Code to Confirm Pickup</h3>
+<input type="text" id="food_id_scan" placeholder="Enter Food ID from QR">
+<button id="scanQrBtn">Confirm Pickup</button>
+
+<div id="scanResult"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $("#scanQrBtn").click(function() {
+        let foodId = $("#food_id_scan").val();
+        if (!foodId) {
+            alert("❌ Enter Food ID.");
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "confirm_qr_scan.php",
+            data: { food_id: foodId },
+            success: function(response) {
+                $("#scanResult").html(response);
+            },
+            error: function() {
+                alert("❌ Error confirming pickup.");
+            }
+        });
+    });
+});
+</script>
 
 <!-- Profile Modal -->
 <div id="profileModal" class="modal">

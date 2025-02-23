@@ -35,9 +35,171 @@ if (!$result_history) {
 
 $result_history = $conn->query($sql_history);
 ?>
-<head>
-<link rel="stylesheet" href="css/style.css">
-</head>
+<style>
+    /* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+h2 {
+    color: #333;
+    background-color: #fff;
+    padding: 15px;
+    margin: 0;
+}
+
+/* Table Styles */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #4CAF50;
+    color: white;
+}
+
+/* Buttons and Links */
+a {
+    text-decoration: none;
+    color: #d9534f;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #b52b27;
+}
+
+/* Form Styling */
+form {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #28a745; /* Green color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+button:active {
+    background-color: #1e7e34; /* Even darker green on click */
+}
+
+/* Food Collection History - Images */
+img {
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+}
+
+/* Modal Background */
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    width: 50%;
+    margin: 10% auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Add Volunteer Button */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+button:active {
+    background-color: #1e7e34;
+}
+
+/* Form Inputs */
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+</style>
 <h2>Welcome, <?php echo $name; ?> (NGO)</h2>
 
 <h2>Volunteers Under Your NGO</h2>
@@ -68,22 +230,31 @@ $result_history = $conn->query($sql_history);
     ?>
 </table>
 
-<h2>Add Volunteer</h2>
-<form action="add_volunteer.php" method="POST">
-    <label>Name:</label>
-    <input type="text" name="volunteer_name" required>
-    
-    <label>Phone:</label>
-    <input type="text" name="volunteer_phone" required>
-    
-    <label>Email:</label>
-    <input type="email" name="volunteer_email" required>
-    
-    <label>Password:</label>
-    <input type="password" name="volunteer_password" required>
-    
-    <button type="submit">Add Volunteer</button>
-</form>
+<button onclick="openModal()">Add Volunteer</button>
+
+<!-- The Modal -->
+<div id="volunteerModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Add Volunteer</h2>
+        <form action="add_volunteer.php" method="POST">
+            <label>Name:</label>
+            <input type="text" name="volunteer_name" required>
+
+            <label>Phone:</label>
+            <input type="text" name="volunteer_phone" required>
+
+            <label>Email:</label>
+            <input type="email" name="volunteer_email" required>
+
+            <label>Password:</label>
+            <input type="password" name="volunteer_password" required>
+
+            <button type="submit">Add Volunteer</button>
+        </form>
+    </div>
+</div>
+
 
 <h3>Food Collection History</h3>
 <table border="1">
